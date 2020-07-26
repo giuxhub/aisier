@@ -1,0 +1,7 @@
+tqdm
+matplotlib
+numpy
+pandas
+seaborn
+sklearn
+tensorflow==2.2.0
