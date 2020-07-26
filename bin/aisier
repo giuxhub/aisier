@@ -1,0 +1,52 @@
+#!/usr/bin/python3
+
+import sys
+
+from aisier.commands.analyze import command_analyze
+from aisier.commands.init import command_init
+from aisier.commands.prepare import command_prepare
+from aisier.commands.optimize import command_optimize_dataset
+from aisier.commands.train import command_train
+from aisier.commands.view import command_view
+
+
+def command_help(argv=None):
+    print('usage: aisier <command> [args] / aisier <action> -h (to get action specific help)')
+    print('\nList of commands:\n')
+    for key, value in COMMANDS.items():
+        print('Command {}: {}'.format(key, value[0]))
+
+    quit()
+
+
+COMMANDS = {
+    'help': ['Init a new aisier project.', command_help],
+    'init': ['Init a new aisier project.', command_init],
+    'analyze': ['Explore dataset attributes.', command_analyze],
+    'prepare': ['Prepare or update a csv dataset for training.', command_prepare],
+    'optimize-dataset': ['Remove duplicates from the dataset.', command_optimize_dataset],
+    'train': ['Start the training phase of a model.', command_train],
+    'view': ['Plot model accuracy and statistics.', command_view]
+}
+
+
+def main():
+    argc = len(sys.argv)
+    cmd = sys.argv[1] if argc >= 2 else None
+
+    if cmd is None:
+        command_help()
+
+    elif cmd not in COMMANDS:
+        print('unknown command {}'.format(cmd))
+        command_help()
+
+    else:
+        try:
+            COMMANDS[cmd][1](sys.argv[2:])
+        except Exception as e:
+            print(e)
+
+
+if __name__ == '__main__':
+    main()
