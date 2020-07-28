@@ -37,6 +37,10 @@ To analyze the features in the dataset, using PCA, Chi2, Correlation matrix (Pea
     aisier view <name>
 To plot model performance and training history.
 
+### Example
+
+- A [behavioral ransomware detector](https://github.com/pagiux/aisier-ransomware-detector) from [IRP logs](https://github.com/pagiux/IRPLogger).
+
 ### Credits
 
 I would really like to thank [evilsocket](https://github.com/evilsocket) and its [ergo](https://github.com/evilsocket/ergo) for the inspiration and the ideas that made the development of this tool possible. 
