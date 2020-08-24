@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 from aisier.version import __version__, __author__, __license__
 
-desc = 'aisier, Tensorflow project management made easier'
+desc = 'aisier, AI project management made easier.'
 
 required = []
 with open('requirements.txt') as fp:
