@@ -4,4 +4,4 @@ numpy
 pandas
 seaborn
 sklearn
-tensorflow==2.2.0
+tensorflow==2.2.1
